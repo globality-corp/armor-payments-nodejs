@@ -27,6 +27,6 @@
     "timekeeper": "0.0.5"
   },
   "dependencies": {
-    "request-promise": "^0.4.2"
+    "request-promise": "^2.0.0"
   }
 }
