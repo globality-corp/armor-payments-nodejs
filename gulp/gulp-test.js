@@ -16,7 +16,7 @@ const MOCHA_ISTANBUL_CONFIG = Object.assign({}, MOCHA_CONFIG, {
   reporter: 'min',
 });
 
-gulp.task('mocha:test', () => (
+gulp.task('mocha:test', ['build'], () => (
   gulp
     .src(path.join(TEST_ROOT, '**/*.spec.js'))
     .pipe(mocha(MOCHA_CONFIG))
