@@ -10,7 +10,7 @@
   },
   "scripts": {
     "prepublish": "./node_modules/.bin/gulp",
-    "test": "grunt"
+    "test": "./node_modules/.bin/gulp mocha:test"
   },
   "engines": {
     "node": "= 5.11.1",

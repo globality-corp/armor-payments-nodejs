@@ -16,19 +16,11 @@ const MOCHA_ISTANBUL_CONFIG = Object.assign({}, MOCHA_CONFIG, {
   reporter: 'min',
 });
 
-gulp.task('mocha:unit', () => (
+gulp.task('mocha:test', () => (
   gulp
-    .src(path.join(TEST_ROOT, 'unit/**/*.spec.js'))
+    .src(path.join(TEST_ROOT, '**/*.spec.js'))
     .pipe(mocha(MOCHA_CONFIG))
 ));
-
-gulp.task('mocha:unitDev', (done) => { // eslint-disable-line no-unused-vars
-  gulp.run('mocha:unit');
-  return gulp.watch([
-    path.join(ROOT, 'src/**/*.js'),
-    path.join(TEST_ROOT, 'test/**/*.js'),
-  ], ['mocha:unit']);
-});
 
 gulp.task('mocha:coverage', (done) => {
   gulp.src([
@@ -53,7 +45,7 @@ gulp.task('mocha:coverage', (done) => {
     }
 
     gulp.src(
-      path.join(TEST_ROOT, 'unit/**/*.spec.js')
+      path.join(TEST_ROOT, '**/*.spec.js')
     )
     .pipe(mocha(MOCHA_ISTANBUL_CONFIG))
     .pipe(istanbul.writeReports({
