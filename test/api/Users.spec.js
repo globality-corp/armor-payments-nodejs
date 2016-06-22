@@ -1,5 +1,5 @@
 import { Authenticator } from 'dist';
-import Users from 'dist/api/users';
+import Users from 'dist/api/Users';
 
 
 describe('Users', () => {

@@ -1,6 +1,6 @@
 import nock from 'nock';
 import { Authenticator } from 'dist';
-import Offers from 'dist/api/offers';
+import Offers from 'dist/api/Offers';
 
 describe('Offers', () => {
   const authenticator = new Authenticator('my-api-key', 'my-secret-code');

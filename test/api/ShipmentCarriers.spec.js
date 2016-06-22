@@ -1,5 +1,5 @@
 import { Authenticator } from 'dist';
-import ShipmentCarriers from 'dist/api/shipmentcarriers';
+import ShipmentCarriers from 'dist/api/ShipmentCarriers';
 
 describe('ShipmentCarriers', () => {
   const authenticator = new Authenticator('my-api-key', 'my-secret-code');

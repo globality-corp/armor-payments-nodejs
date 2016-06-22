@@ -1,6 +1,6 @@
 import nock from 'nock';
 import { Authenticator } from 'dist';
-import Accounts from 'dist/api/accounts';
+import Accounts from 'dist/api/Accounts';
 
 
 describe('Accounts', () => {
