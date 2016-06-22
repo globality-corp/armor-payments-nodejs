@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Authenticator = exports.Api = undefined;
 
-var _Api = require('./Api/Api');
+var _Api = require('./api/Api');
 
 var _Api2 = _interopRequireDefault(_Api);
 

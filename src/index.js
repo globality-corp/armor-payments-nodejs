@@ -1,4 +1,4 @@
-import Api from './Api/Api';
+import Api from './api/Api';
 import Authenticator from './Authenticator';
 
 export default {};
