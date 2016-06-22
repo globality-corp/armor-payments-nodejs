@@ -1,6 +1,6 @@
 {
   "name": "armor-payments",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Node.js client for Armor Payments",
   "author": "Adam Ever-Hadani",
   "license": "MIT",
@@ -9,24 +9,53 @@
     "url": "https://github.com/globality-corp/armor-payments-nodejs.git"
   },
   "scripts": {
-    "prepublish": "coffee -o lib/ src/",
+    "prepublish": "./node_modules/.bin/gulp",
     "test": "grunt"
   },
-  "main": "./lib",
+  "engines": {
+    "node": "= 5.11.1",
+    "npm": "= 3.8.6",
+    "engineStrict": true
+  },
+  "main": "./dist",
   "devDependencies": {
+    "babel-core": "^6.8.0",
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-transform-async-to-module-method": "^6.8.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "bluebird": "^3.4.0",
     "chai": "^2.2.0",
-    "coffee-script": "^1.9.2",
-    "coffeelint": "^1.9.3",
-    "grunt": "^0.4.5",
-    "grunt-coffeelint": "0.0.13",
-    "grunt-contrib-coffee": "^0.13.0",
-    "grunt-mocha-test": "^0.12.7",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-friendly-formatter": "^2.0.4",
+    "eslint-plugin-import": "^1.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-if": "^2.0.0",
+    "gulp-istanbul": "^1.0.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "gulp-zip": "^3.2.0",
+    "isparta": "^4.0.0",
     "mocha": "^2.2.4",
     "nock": "^1.6.1",
+    "run-sequence": "^1.1.5",
     "sinon": "^1.14.1",
-    "timekeeper": "0.0.5"
+    "sinon-chai": "^2.8.0",
+    "timekeeper": "0.0.5",
+    "yargs": "^3.10.0"
   },
   "dependencies": {
-    "request-promise": "^0.4.2"
+    "app-module-path": "^1.1.0",
+    "lodash": "^4.0.0",
+    "request-promise": "^3.0.0"
   }
 }
