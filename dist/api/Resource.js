@@ -39,17 +39,24 @@ let Resource = class Resource {
     return objectId ? `${ this.uriRoot }/${ this.resourceName() }/${ objectId }` : `${ this.uriRoot }/${ this.resourceName() }`;
   }
 
+  parseBodyResponse(response) {
+    const contentType = _lodash2.default.get(response, ['headers', 'content-type']);
+    if (contentType && contentType.match(/json/i)) {
+      return JSON.parse(response.body);
+    }
+    return response.body;
+  }
+
   request(method, params) {
     var _this = this;
 
     return (0, _bluebird.coroutine)(function* () {
-      const response = yield _this.client[method](params);
-      const contentType = _lodash2.default.get(response, ['headers', 'content-type']);
-      if (contentType && contentType.match(/json/i)) {
-        // If possible, parse the JSON
-        response.body = JSON.parse(response.body);
+      try {
+        const response = yield _this.client[method](params);
+        return _this.parseBodyResponse(response);
+      } catch (error) {
+        throw new Error(_this.parseBodyResponse(error.response));
       }
-      return response;
     })();
   }
 

@@ -54,7 +54,7 @@ let Api = class Api {
     return new _Users2.default(this.armorHost(), this.authenticator, this.accounts().uri(accountId));
   }
 
-  shipmentcarriers() {
+  shipmentCarriers() {
     if (!this.shipmentCarriersObject) {
       this.shipmentCarriersObject = new _ShipmentCarriers2.default(this.armorHost(), this.authenticator, '');
     }

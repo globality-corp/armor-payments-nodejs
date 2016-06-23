@@ -57,11 +57,11 @@ let Orders = class Orders extends _Resource2.default {
     return new _Disputes2.default(this.host, this.authenticator, this.uri(orderId));
   }
 
-  orderevents(orderId) {
+  orderEvents(orderId) {
     return new _OrderEvents2.default(this.host, this.authenticator, this.uri(orderId));
   }
 
-  paymentinstructions(orderId) {
+  paymentInstructions(orderId) {
     return new _PaymentInstructions2.default(this.host, this.authenticator, this.uri(orderId));
   }
 
