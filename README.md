@@ -24,9 +24,9 @@ nice-ness that we've parsed the JSON response body for you if possible.
 
 
 ```javascript
-var armorPayments = require('armor-payments');
+import { Api } from 'armor-payments';
 
-var client = new armorPayments.API('your-key', 'your-secret', shouldUseSandbox);
+var client = new Api('your-key', 'your-secret', shouldUseSandbox);
 
 // There are four top-level resources: accounts, users, orders, and shipmentcarriers
 // Querying users and orders requires an accountId
@@ -35,12 +35,53 @@ client.accounts().all().then(function (response) {
 });
 ```
 
-Fore more detailed usage examples, See the [Ruby
-client](https://github.com/Armor-Payments/armor_payments_ruby). We follow the
-same API naming and method chaining conventions with only differences being the
-usage of camelCase instead of under_scores, and using Promises for handling
-responses as above.
+## Available endpoints
 
+* `client.accounts().create(data)`
+* `client.accounts().update(accountId, data)`
+* `client.accounts().all()`
+* `client.accounts().get(accountId)`
+* `client.accounts().bankAccounts(accountId).create(data)`
+* `client.accounts().bankAccounts(accountId).all()`
+* `client.accounts().bankAccounts(accountId).get(bankAccountId)`
+* `client.users(accountId).update(userId, data)`
+* `client.users(accountId).all()`
+* `client.users(accountId).get(userId)`
+* `client.users(accountId).authentications(userId).create(data)`
+* `client.users(accountId).authentications(userId).all()`
+* `client.users(accountId).authentications(userId).get(authenticationId)`
+* `client.orders(accountId).create(data)`
+* `client.orders(accountId).update(orderId, data)`
+* `client.orders(accountId).all()`
+* `client.orders(accountId).get(orderId)`
+* `client.orders(accountId).documents(orderId).create(data)`
+* `client.orders(accountId).documents(orderId).all()`
+* `client.orders(accountId).documents(orderId).get(documentId)`
+* `client.orders(accountId).notes(orderId).create(data)`
+* `client.orders(accountId).notes(orderId).all()`
+* `client.orders(accountId).notes(orderId).get(noteId)`
+* `client.orders(accountId).disputes(orderId).documents(disputeId).create(data)`
+* `client.orders(accountId).disputes(orderId).documents(disputeId).all()`
+* `client.orders(accountId).disputes(orderId).documents(disputeId).get(documentId)`
+* `client.orders(accountId).disputes(orderId).notes(disputeId).create(data)`
+* `client.orders(accountId).disputes(orderId).notes(disputeId).all()`
+* `client.orders(accountId).disputes(orderId).notes(disputeId).get(noteId)`
+* `client.orders(accountId).disputes(orderId).offers(disputeId).update(offerId, data)`
+* `client.orders(accountId).disputes(orderId).offers(disputeId).documents(offerId).create(data)`
+* `client.orders(accountId).disputes(orderId).offers(disputeId).documents(offerId).all()`
+* `client.orders(accountId).disputes(orderId).offers(disputeId).documents(offerId).get(documentId)`
+* `client.orders(accountId).disputes(orderId).offers(disputeId).notes(offerId).create(data)`
+* `client.orders(accountId).disputes(orderId).offers(disputeId).notes(offerId).all()`
+* `client.orders(accountId).disputes(orderId).offers(disputeId).notes(offerId).get(noteId)`
+* `client.orders(accountId).orderEvents(orderId).all()`
+* `client.orders(accountId).orderEvents(orderId).get(eventId)`
+* `client.orders(accountId).paymentInstructions(orderId).all()`
+* `client.orders(accountId).paymentInstructions(orderId).get(paymentInstructionsId)`
+* `client.orders(accountId).shipments(orderId).create(data)`
+* `client.orders(accountId).shipments(orderId).all()`
+* `client.orders(accountId).shipments(orderId).get(shipmentId)`
+* `client.shipmentCarriers().all()`
+* `client.shipmentCarriers().get(shipmentCarrierId)`
 
 ## Developing
 
