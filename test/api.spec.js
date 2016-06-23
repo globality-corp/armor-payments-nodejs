@@ -20,10 +20,10 @@ describe('Api', () => {
   });
 
   describe('#subresources', () => {
-    describe('shipmentcarriers', () => {
+    describe('shipmentCarriers', () => {
       it('can retrieve the shipment carriers resource', () => {
-        client.shipmentcarriers().should.be.an.object;
-        client.shipmentcarriers().all.should.be.a.function;
+        client.shipmentCarriers().should.be.an.object;
+        client.shipmentCarriers().all.should.be.a.function;
       });
     });
 

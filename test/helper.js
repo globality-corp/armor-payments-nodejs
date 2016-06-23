@@ -1,7 +1,6 @@
 import path from 'path';
 import chai from 'chai';
-// import chaiHttp from 'chai-http';
-// import chaiAsPromised from 'chai-as-promised';
+import chaiAsPromised from 'chai-as-promised';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import { addPath } from 'app-module-path';
@@ -16,11 +15,9 @@ global.SRC = appPath('lib');
 
 // Chai Configuration - http://chaijs.com/plugins
 global.chai = chai;
-// global.chaiHttp = chaiHttp;
 global.should = chai.should();
-// global.chaiAsPromised = chaiAsPromised;
-// global.chai.use(chaiAsPromised);
-// global.chai.use(chaiHttp);
+global.chaiAsPromised = chaiAsPromised;
+global.chai.use(chaiAsPromised);
 global.expect = chai.expect;
 
 // Sinon
