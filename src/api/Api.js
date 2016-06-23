@@ -36,7 +36,7 @@ class Api {
     return new Users(this.armorHost(), this.authenticator, this.accounts().uri(accountId));
   }
 
-  shipmentcarriers() {
+  shipmentCarriers() {
     if (!this.shipmentCarriersObject) {
       this.shipmentCarriersObject = new ShipmentCarriers(this.armorHost(), this.authenticator, '');
     }

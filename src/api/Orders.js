@@ -30,11 +30,11 @@ class Orders extends Resource {
     return new Disputes(this.host, this.authenticator, this.uri(orderId));
   }
 
-  orderevents(orderId) {
+  orderEvents(orderId) {
     return new OrderEvents(this.host, this.authenticator, this.uri(orderId));
   }
 
-  paymentinstructions(orderId) {
+  paymentInstructions(orderId) {
     return new PaymentInstructions(this.host, this.authenticator, this.uri(orderId));
   }
 
