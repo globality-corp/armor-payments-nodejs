@@ -28,14 +28,21 @@ class Resource {
       : `${this.uriRoot}/${this.resourceName()}`;
   }
 
-  async request(method, params) {
-    const response = await this.client[method](params);
+  parseBodyResponse(response) {
     const contentType = _.get(response, ['headers', 'content-type']);
     if (contentType && contentType.match(/json/i)) {
-      // If possible, parse the JSON
-      response.body = JSON.parse(response.body);
+      return JSON.parse(response.body);
     }
-    return response;
+    return response.body;
+  }
+
+  async request(method, params) {
+    try {
+      const response = await this.client[method](params);
+      return this.parseBodyResponse(response);
+    } catch (error) {
+      throw new Error(this.parseBodyResponse(error.response));
+    }
   }
 
   all() {
